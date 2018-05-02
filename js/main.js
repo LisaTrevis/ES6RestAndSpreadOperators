@@ -1,44 +1,41 @@
-// ----- Template Strings ------
+// ----- Rest & Spread Operators ------
 
-// Also known as template literals or string interpolation
-// Really great when mixing in a lot of variables to clean up code.
+function addNumbers(array) {
+	return numbers.reduce(function(sum, number) {
+		return sum + number
+	}, 0);
+}
 
-// function getMessage() {
-// 	const year = new Date().getFullYear();
+// Initial refactor with fat arrow function:
+function addNumbers(array) {
+	return numbers.reduce(sum, number) => {
+		return sum + number
+	}, 0);
+}
 
-// 	return "The year is " + year;
-// }
+addNumbers[1, 2, 3, 4, 5];
 
+// But what if we wanted to pass in a bunch of numbers as arguments rather than passing in an array, like so:
+addNumbers(1, 2, 3, 4, 5);
 
-// function getMessage() {
-// 	const year = new Date().getFullYear();
+// We'd have to set up the function like so:
+function addNumbers(a, b, c, d, e) {
+	const number = [a, b, c, d, e]
+	return numbers.reduce(sum, number) => {
+		return sum + number
+	}, 0);
+}
 
-// 	return `The year is ${year}`;
-// }
-
-
-// Can also be written as:
-
-// function getMessage() {
-// 	return `The year is ${ new Date().getFullYear() }`;
-// }
-
-
-// Refactor the functions to use template strings:
-
-// function doubleMessage(number) {
-//   return "Your number doubled is " + (2 * number);
-// }
-
-// function doubleMessage(number) {
-//   return `Your number doubled is ${2 * number}`;
-// }
+// The work around for this is, which takes however many numbers we add as arguments and puts them into an array:
+function addNumbers(...numbers) {
+	return numbers.reduce(sum, number) => {
+		return sum + number
+	}, 0);
+}
 
 
-// function fullName(firstName, lastName) {
-//   return firstName + lastName;
-// }
 
-// function fullName(firstName, lastName) {
-//   return `${firstName} ${lastName}`;
-// }
+
+
+
+
