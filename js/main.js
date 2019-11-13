@@ -131,4 +131,44 @@
 
 // ES6 Maximilian Schwartzmuller
 
-// TEST
+// REST OPERATOR: takes a list of numbers and puts them into an array
+
+// let numbers = [1, 2, 3, 4, 5]
+
+// function sumUp(toAdd) {
+// 	let result = 0
+// 	for (let i = 0; i < toAdd.length; i++){
+// 		result += toAdd[i]
+// 	}
+// 	return result
+// }
+
+// console.log(sumUp(numbers))
+
+// But what if we only have a list of values to pass into the function, that aren't in array format? Or we don't know how many args to expect? Use the Rest operator. It converts a list of numbers into an array of numbers when used in the arg list.
+
+// function sumUp(...toAdd) {
+// 	// We can test this by console logging toAdd:
+// 	console.log(toAdd)
+// 	let result = 0
+// 	for (let i = 0; i < toAdd.length; i++){
+// 		result += toAdd[i]
+// 	}
+// 	return result
+// }
+
+// console.log(sumUp(100, 20, 10))
+
+// // This also works with strings:
+// console.log(sumUp(100, 20, "10"))
+
+
+// SPREAD OPERATOR: takes an array and splits it into individual values
+
+let numbers = [1, 2, 3, 4, 5]
+
+console.log(Math.max(numbers)) // results in NaN because Math.max expects a list of numbers, not an array.
+
+console.log(...numbers) // loops through the array and splits the numbers
+
+console.log(Math.max(...numbers)) // returns a list of numbers when used in the function call
