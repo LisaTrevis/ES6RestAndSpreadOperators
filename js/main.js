@@ -125,3 +125,10 @@
 //   return nums.concat(array);
 // }
 
+
+// ********************************* //
+// ********************************* //
+
+// ES6 Maximilian Schwartzmuller
+
+// TEST
